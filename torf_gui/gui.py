@@ -390,11 +390,8 @@ class TorfGUI(Ui_MainWindow):
             )
         else:
             self._statusBarMsg(
-                "{}: {} files, {}".format(
-                    ptail,
-                    t_info[1],
-                    humanfriendly.format_size(t_info[0], binary=True),
-                )
+                f"{ptail}: {t_info[1]} files, "
+                f"{humanfriendly.format_size(t_info[0], binary=True)}"
             )
         self.pieceSizeComboBox.setCurrentIndex(0)
         self.updatePieceCountLabel(t_info[3], t_info[2])
