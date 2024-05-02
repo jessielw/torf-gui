@@ -1,5 +1,9 @@
 Changelog
 =========
+0.4.1
+-----
+* New build for pypi, complained the file already existed
+
 0.4.0
 -----
 * Add Mac ARM and Universal builds
