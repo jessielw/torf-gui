@@ -12,26 +12,19 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: macos-latest
+          - os: macos-latest-large
             TARGET: macos-x86_64
             CMD_BUILD: >
-              pyinstaller -F -w -n --target-arch x86_64 torf-gui torf_gui/gui.py &&
+              pyinstaller -F -w -n torf-gui --target-arch x86_64 torf_gui/gui.py &&
               cd dist/ &&
-              zip -r9 torf-gui-macOS torf-gui.app/
+              zip -r9 torf-gui-macOS-x86_64 torf-gui.app/
             OUT_FILE_NAME: torf-gui-macOS-x86_64.zip
           - os: macos-latest
             TARGET: macos-arm64
             CMD_BUILD: >
-              pyinstaller -F -w -n --target-arch arm64 torf-gui torf_gui/gui.py &&
+              pyinstaller -F -w -n torf-gui --target-arch arm64 torf_gui/gui.py &&
               cd dist/ &&
-              zip -r9 torf-gui-macOS torf-gui.app/
-            OUT_FILE_NAME: torf-gui-macOS-arm64.zip
-          - os: macos-latest
-            TARGET: macos-universal
-            CMD_BUILD: >
-              pyinstaller -F -w -n --target-arch universal2 torf-gui torf_gui/gui.py &&
-              cd dist/ &&
-              zip -r9 torf-gui-macOS torf-gui.app/
+              zip -r9 torf-gui-macOS-arm64 torf-gui.app/
             OUT_FILE_NAME: torf-gui-macOS-arm64.zip
           - os: windows-latest
             TARGET: windows
