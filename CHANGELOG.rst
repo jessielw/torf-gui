@@ -1,5 +1,9 @@
 Changelog
 =========
+0.4.0
+-----
+* Add Mac ARM and Universal builds
+
 0.3.1
 -----
 * Fix sub-folder support in batch mode [#20]
